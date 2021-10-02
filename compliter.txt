@@ -1,0 +1,15 @@
+1. sudo -s
+2. cd /Library/Java/JavaVirtualMachines/liberica-jdk-1.8.0_232/Contents/Home/jre/bin
+3. keytool -genkey -v -keystore tropicaladventure.keystore -alias tropicaladventure_alias -keyalg RSA -keysize 2048 -validity 10000 -storepass dhkelfh -keypass dhkelfh -dname "CN=, OU=, O=, L=, S=, C="
+4. cd /Users/kirillsamylin/Library/Android/sdk/build-tools/30.0.2/
+5. jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /Users/kirillsamylin/Desktop/cordova/mobile_app_v20/for_release/tropicaladventure.keystore /Users/kirillsamylin/Desktop/cordova/mobile_app_v20/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk tropicaladventure_alias
+6. ./zipalign -v 4 /Users/kirillsamylin/Desktop/cordova/mobile_app_v20/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk /Users/kirillsamylin/Desktop/cordova/mobile_app_v20/for_release/tropicaladventure.apk
+
+ Проверка SHA-1
+cd /Library/Java/JavaVirtualMachines/liberica-jdk-1.8.0_232/Contents/Home/jre/bin
+keytool -list -printcert -jarfile /Users/kirillsamylin/Desktop/cordova/mobile_app_v20/for_release/tropicaladventure.apk
+or
+/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/bin/keytool -list -printcert -jarfile /Users/gserge/Downloads/Great_Win.apk
+keytool -list -v -keystore cosmo123.keystore
+/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/bin/keytool -list -v -keystore /Users/gserge/Downloads/Cosmo_game.keystore
+dhkelfh

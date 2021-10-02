@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="78" id="com.gamesforjames.tropicaladventure" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="BranchSDK">
+        <param name="android-package" value="io.branch.BranchSDK" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
+    </feature>
+    <feature name="AppsFlyerPlugin">
+        <param name="android-package" value="com.appsflyer.cordova.plugin.AppsFlyerPlugin" />
+    </feature>
+    <feature name="FacebookConnectPlugin">
+        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <access origin="https://m.facebook.com" />
+    <access origin="https://graph.facebook.com" />
+    <access origin="https://api.facebook.com" />
+    <access origin="https://*.fbcdn.net" />
+    <access origin="https://*.akamaihd.net" />
+    <feature name="Idfa">
+        <param name="android-package" value="by.chemerisuk.cordova.advertising.IdfaPlugin" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
+    <feature name="AppMetrica">
+        <param name="android-package" value="com.yandex.metrica.plugin.cordova.AppMetricaPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>Tropical Adventure</name>
+    <content src="index.html" />
+    <access origin="*" />
+    <branch-config>
+        <branch-key value="key_live_jp4gvsFtrEp9dQ1KzihqOikfvFiLAe2s" />
+        <uri-scheme value="branchcordova" />
+        <link-domain value="cordova.app.link" />
+        <link-domain value="cordova-alternate.app.link" />
+    </branch-config>
+    <icon density="mdpi" src="res/icons/icon-16.png" />
+    <icon density="hdpi" src="res/icons/icon-32.png" />
+    <icon density="xhdpi" src="res/icons/icon-114.png" />
+    <icon density="xxhdpi" src="res/icons/icon-128.png" />
+    <icon density="xxxhdpi" src="res/icons/icon-256.png" />
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="android-targetSdkVersion" value="29" />
+</widget>

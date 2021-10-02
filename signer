@@ -1,0 +1,54 @@
+#!/bin/bash
+
+sudo -s
+
+# settings apps
+appname="tropicaladventure"; #app name
+password="dhkelfh"
+
+# settings signer
+nameJDK="liberica-jdk-1.8.0_232"; #name liberica
+username="kirillsamylin"; # user name PC mac
+keyname="$appname.keystore"; #key name
+mydir=`pwd`; #way app
+
+function sign {
+    cd /Users/$username/Library/Android/sdk/build-tools/30.0.2/
+    jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $mydir/build/$keyname $mydir/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk $appname"_alias"
+    ./zipalign -v 4 $mydir/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk $mydir/build/$appname.apk
+    echo "FINISH";
+};
+function checkApp {
+    if [ -e $mydir/build/$appname.apk ]
+    then
+    echo "$appname.apk exist, delete and create!";
+    
+    else
+    echo "$appname.apk no exist, create!";
+    sign
+    fi
+};
+function createKey {
+    cd /Library/Java/JavaVirtualMachines/$nameJDK/Contents/Home/jre/bin
+    keytool -genkey -v -keystore $mydir/build/$keyname -alias $appname"_alias" -keyalg RSA -keysize 2048 -validity 10000 -storepass $password -keypass $password -dname "CN=, OU=, O=, L=, S=, C="
+    sign
+};
+function checkKey {
+    if [ -e $mydir/build/$keyname ]
+    then
+    echo "Exist is key: true. Apps singer!";
+    sign
+    else
+    echo "Exist is key: false. Apps create!";
+    createKey
+    fi
+};
+if [ -e $mydir/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk ]
+then
+echo "app-release-unsigned.apk exists";
+checkKey
+else
+echo "app-release-unsigned.apk no exists";
+cordova build android --release
+checkKey
+fi

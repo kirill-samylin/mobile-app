@@ -1,0 +1,51 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "branch-cordova-sdk": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-appsflyer-sdk": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "453579389033992",
+      "APP_NAME": "TropicalAdventure",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0",
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-idfa": {
+      "ANDROID_PLAY_ADID_VERSION": "17.0.+",
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-webpack": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    },
+    "yandex-appmetrica-plugin-cordova": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.gamesforjames.tropicaladventure"
+    }
+  }
+}

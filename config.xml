@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+    <widget id="com.gamesforjames.tropicaladventure" android-versionCode="78" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Tropical Adventure</name>
+    <content src="index.html" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="android-targetSdkVersion" value="29" />
+    <access origin="*" />
+    <platform name="android">
+        <icon src="res/icons/icon-16.png" density="mdpi" />
+        <icon src="res/icons/icon-32.png" density="hdpi" />
+        <icon src="res/icons/icon-114.png" density="xhdpi" />
+        <icon src="res/icons/icon-128.png" density="xxhdpi" />
+        <icon src="res/icons/icon-256.png" density="xxxhdpi" />
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+    </platform>
+    <plugin name="branch-cordova-sdk" spec="^4.0.0" />
+    <branch-config>
+        <branch-key value="key_live_jp4gvsFtrEp9dQ1KzihqOikfvFiLAe2s" />
+        <uri-scheme value="branchcordova" />
+        <link-domain value="cordova.app.link" />
+        <link-domain value="cordova-alternate.app.link" />
+    </branch-config>
+</widget>
